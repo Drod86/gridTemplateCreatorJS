@@ -29,8 +29,8 @@ body {
   width: 90vw;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: 4.5rem repeat(8, 1fr);
+  grid-template-rows: 2.5rem repeat(11, 1fr);
   gap: 1rem;
   box-shadow: none;
 }
@@ -39,20 +39,39 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
 }
 
 .header {
-  grid-area: span 2 / span 9;
+  grid-row: 1 / 3;
+  grid-column: 1 / -1;
+}
+
+.main-menu--left {
+  grid-row-start: 1;
+  grid-row-end: auto;
+  grid-column-start: 1;
+  grid-column-end: auto;
+  visibility: inherit;
+  z-index: 20;
+}
+
+.profile-menu--right {
+  grid-row: 1 / -1;
+  grid-column: -3 / -1;
 }
 
 .main {
-  grid-area: span 8 / span 6;
+  grid-row: 3 / 11;
+  grid-column: 1 / 7;
 }
 
 .aside {
-  grid-area: span 8 / span 3;
+  grid-row: 3 / 11;
+  grid-column: 7 / -1;
 }
 
 .footer {
-  grid-area: span 2 / span 9;
+  grid-row: 11 / -1;
+  grid-column: 1 / -1;
 }
