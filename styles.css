@@ -1,7 +1,14 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   border: 0;
   box-sizing: inherit;
+  border-radius: 0.5rem;
+}
+
+*:hover {
+  box-shadow: 0.2rem 0.2rem 0.5rem hsla(0, 0%, 50%, 0.8);
 }
 
 html {
@@ -13,10 +20,39 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: 400;
   box-sizing: border-box;
-  margin: 0 6rem;
   font-size: 1.6rem;
+  box-shadow: none;
 }
 
 .container {
+  height: 100vh;
+  width: 90vw;
+  margin: 0 auto;
   display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 1rem;
+  box-shadow: none;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  grid-area: span 2 / span 9;
+}
+
+.main {
+  grid-area: span 8 / span 6;
+}
+
+.aside {
+  grid-area: span 8 / span 3;
+}
+
+.footer {
+  grid-area: span 2 / span 9;
 }
